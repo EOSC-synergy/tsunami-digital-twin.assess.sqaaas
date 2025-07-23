@@ -1,0 +1,68 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin:
+      branch: main
+      repo: https://github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin git:
+        commands:
+        - /usr/bin/env sh .sqa/script.crappy-asparagus-cattle.sh
+        container: qc.acc_squirrely-chartreuse-octopus
+  QC.Doc:
+    repos:
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.scummy-taupe-burmese.sh
+        container: qc.doc_stuffy-azure-bat
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin git:
+        commands:
+        - /usr/bin/env sh .sqa/script.chewy-eggplant-zebra.sh
+        container: qc.doc_randy-cobalt-seal
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.homey-wheat-tiger.sh
+        container: qc.doc_flabby-lavender-nightingale
+  QC.Lic:
+    repos:
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.snippy-goldenrod-earwig.sh
+        container: qc.lic_woolly-tangerine-snake
+  QC.Sec:
+    repos:
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.hilly-wheat-turtle.sh
+        container: qc.sec_crappy-jade-spaniel
+  QC.Sty:
+    repos:
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.skinny-wheat-meerkat.sh
+        container: qc.sty_silly-mustard-moth
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.flimsy-chestnut-mau.sh
+        container: qc.sty_snoopy-coral-ferret
+  QC.Uni:
+    repos:
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.squirrely-fuchsia-quail.sh
+        container: qc.uni_sleepy-auburn-wildebeest
+  QC.Ver:
+    repos:
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaggy-linen-dragon.sh
+        container: qc.ver_zippy-magnolia-angelfish
+timeout: 5400
