@@ -1,0 +1,1688 @@
+{
+    "meta": {
+        "version": "3.5.0",
+        "report_json_url": "https://raw.githubusercontent.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas/main/.report/assessment_output.json",
+        "report_permalink": "https://sqaaas.eosc-synergy.eu/full-assessment/report/https://raw.githubusercontent.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas/main/.report/assessment_output.json",
+        "timestamp": 1753269858.1878176
+    },
+    "repository": [
+        {
+            "url": "https://github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin",
+            "name": "dtgeoeu-wp6-tsunamis/tsunami-digital-twin",
+            "tag": "main",
+            "commit_id": "0802562b10332b62008a8abf2c693f72c66d30a2",
+            "is_main_repo": true,
+            "avatar_url": "https://avatars.githubusercontent.com/u/138689935?v=4",
+            "description": null,
+            "languages": null,
+            "topics": null,
+            "stargazers_count": null,
+            "watchers_count": null,
+            "contributors_count": null,
+            "forks_count": null,
+            "badge_status": "no_badge"
+        }
+    ],
+    "report": {
+        "QC.Acc": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Acc01": {
+                    "description": "Is the source code managed with a Version Control System?",
+                    "requirement_level": "MUST",
+                    "hint": "The source code shall be managed with Git and remain publicly available for this criterion to be successful. Please check <a href=\"https://git-scm.com/book/es/v2\" target=\"_blank\">Pro Git</a> docs about how to get started using Git tool. Guidelines provided by the most popular social coding platforms (<a href=\"https://docs.github.com/get-started\" target=\"_blank\">GitHub</a>, <a href=\"https://about.gitlab.com/get-started/\" target=\"_blank\">GitLab</a>) are also a good starting point",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Source code uses Git for version control",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": "scm",
+                                "version": "2.34.1",
+                                "docker": {
+                                    "image": "bitnami/git:2.34.1",
+                                    "reviewed": "2021-12-30"
+                                },
+                                "ci": {
+                                    "name": "QC.Acc github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/34/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 1,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Doc": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Doc06.1": {
+                    "description": "Is the software scope outlined in the code repository?",
+                    "requirement_level": "MUST",
+                    "hint": "A README file presents your software to the audience interested in your software project. Several online sites simplify the task of creating the README file, such as <a href=\"https://www.makeareadme.com/\" target=\"_blank\">Make a README</a> or <a href=\"https://readme.so/\" target=\"_blank\">readme.so</a> sites. Be sure to add it to the code repository's root path",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "A README file is present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 9322}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 9322
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc06.3": {
+                    "description": "Does the project establish a code of conduct for its participants?",
+                    "requirement_level": "MUST",
+                    "hint": "A CODE_OF_CONDUCT file sets the path for a constructive, respectful and positive atmosphere among all the contributors in your software project. Of course you can define your own, but in case you want to rely on external and widely-adopted code of conducts check out some of the most popular ones: <a href=\"https://contributor-covenant.org/\" target=\"_blank\">Contributor Covenant</a> or <a href=\"https://web.archive.org/web/20200330154000/http://citizencodeofconduct.org/\" target=\"_blank\">Citizen Code of Conduct</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CODE_OF_CONDUCT file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 9322}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 9322
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc06.2": {
+                    "description": "Is there a clear path or guidelines on how to contribute to the code?",
+                    "requirement_level": "MUST",
+                    "hint": "A CONTRIBUTING file shall be present in the root path of the code repository describing the expected workflow to follow when adding contributions. Please check <a href=\"https://mozillascience.github.io/working-open-workshop/contributing/\" target=\"_blank\">Mozilla's guidelines</a> and <a href=\"https://github.com/github/docs/blob/main/CONTRIBUTING.md\" target=\"_blank\">GitHub's CONTRIBUTING.md example</a> to get inspired on how to write a good CONTRIBUTING file",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CONTRIBUTING file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 9322}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 9322
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc01.1": {
+                    "description": "Are docs managed in the same repository as code?",
+                    "requirement_level": "MAY",
+                    "hint": "This subcriterion will succeed if the documentation files exist on the same repository as the source code, e.g. under a <code>docs/</code> folder",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Documentation resides in the same repository as code",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": null,
+                                "version": null,
+                                "docker": null,
+                                "ci": {
+                                    "name": "QC.Doc github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/52/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc02.X": {
+                    "description": "Are docs following a style for the Markdown markup language?",
+                    "requirement_level": "MAY",
+                    "hint": "When using a docs-as-code approach, the style of the markup language is being checked. SQAaaS relies on <a href=\"https://github.com/markdownlint/markdownlint/\" target=\"_blank\">markdownlint</a> for Markdown files and <a href=\"https://github.com/twolfson/restructuredtext-lint/\" target=\"_blank\">restructuredtext-lint</a> for reStructuredText",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Docs are not fully compliant with markdownlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-markdownlint",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "markdownlint",
+                                "lang": "Markdown",
+                                "version": "0.11.0",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/markdownlint/Dockerfile",
+                                    "reviewed": "1970-01-01"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin markdownlint",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "mdl --json  ."
+                                    ],
+                                    "stdout_text": "[{\"filename\":\"./README.md\",\"line\":15,\"rule\":\"MD001\",\"aliases\":[\"header-increment\"],\"description\":\"Header levels should only increment by one level at a time\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md001---header-levels-should-only-increment-by-one-level-at-a-time\"},{\"filename\":\"./README.md\",\"line\":1,\"rule\":\"MD002\",\"aliases\":[\"first-header-h1\"],\"description\":\"First header should be a top level header\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md002---first-header-should-be-a-top-level-header\"},{\"filename\":\"./README.md\",\"line\":31,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":46,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":75,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":81,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":83,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":86,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":91,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":97,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":98,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":126,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":3,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":25,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":5,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":6,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":8,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":9,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":10,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":16,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":31,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":39,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":58,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":61,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":66,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":68,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":70,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":74,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":75,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":76,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":79,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":86,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":88,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":91,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":93,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":104,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":105,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":111,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":118,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":120,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":121,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":122,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":123,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":126,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":127,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":131,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":137,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":4,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":15,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":20,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":26,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":41,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":60,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":65,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":78,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":90,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":125,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":107,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":109,\"rule\":\"MD029\",\"aliases\":[\"ol-prefix\"],\"description\":\"Ordered list item prefix\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md029---ordered-list-item-prefix\"},{\"filename\":\"./README.md\",\"line\":28,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":30,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":44,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":46,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":48,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":51,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":55,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":57,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":92,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":94,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":110,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":112,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":82,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":91,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":96,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":101,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":104,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":109,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":114,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":18,\"rule\":\"MD034\",\"aliases\":[\"no-bare-urls\"],\"description\":\"Bare URL used\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md034---bare-url-used\"},{\"filename\":\"./README.md\",\"line\":86,\"rule\":\"MD034\",\"aliases\":[\"no-bare-urls\"],\"description\":\"Bare URL used\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md034---bare-url-used\"},{\"filename\":\"./utils/README.md\",\"line\":1,\"rule\":\"MD002\",\"aliases\":[\"first-header-h1\"],\"description\":\"First header should be a top level header\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md002---first-header-should-be-a-top-level-header\"},{\"filename\":\"./utils/README.md\",\"line\":6,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./utils/README.md\",\"line\":5,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"}]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/61/log?consoleFull"
+                                },
+                                "level": "RECOMMENDED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "./README.md": {
+                                    "MD001": {
+                                        "description": "Header levels should only increment by one level at a time",
+                                        "line": [
+                                            15
+                                        ]
+                                    },
+                                    "MD002": {
+                                        "description": "First header should be a top level header",
+                                        "line": [
+                                            1
+                                        ]
+                                    },
+                                    "MD009": {
+                                        "description": "Trailing spaces",
+                                        "line": [
+                                            31,
+                                            46,
+                                            75,
+                                            81,
+                                            83,
+                                            86,
+                                            91,
+                                            97,
+                                            98,
+                                            126
+                                        ]
+                                    },
+                                    "MD012": {
+                                        "description": "Multiple consecutive blank lines",
+                                        "line": [
+                                            3,
+                                            25
+                                        ]
+                                    },
+                                    "MD013": {
+                                        "description": "Line length",
+                                        "line": [
+                                            5,
+                                            6,
+                                            8,
+                                            9,
+                                            10,
+                                            16,
+                                            31,
+                                            39,
+                                            58,
+                                            61,
+                                            66,
+                                            68,
+                                            70,
+                                            74,
+                                            75,
+                                            76,
+                                            79,
+                                            86,
+                                            88,
+                                            91,
+                                            93,
+                                            104,
+                                            105,
+                                            111,
+                                            118,
+                                            120,
+                                            121,
+                                            122,
+                                            123,
+                                            126,
+                                            127,
+                                            131,
+                                            137
+                                        ]
+                                    },
+                                    "MD022": {
+                                        "description": "Headers should be surrounded by blank lines",
+                                        "line": [
+                                            4,
+                                            15,
+                                            20,
+                                            26,
+                                            41,
+                                            60,
+                                            65,
+                                            78,
+                                            90,
+                                            125
+                                        ]
+                                    },
+                                    "MD029": {
+                                        "description": "Ordered list item prefix",
+                                        "line": [
+                                            107,
+                                            109
+                                        ]
+                                    },
+                                    "MD031": {
+                                        "description": "Fenced code blocks should be surrounded by blank lines",
+                                        "line": [
+                                            28,
+                                            30,
+                                            44,
+                                            46,
+                                            48,
+                                            51,
+                                            55,
+                                            57,
+                                            92,
+                                            94,
+                                            110,
+                                            112
+                                        ]
+                                    },
+                                    "MD032": {
+                                        "description": "Lists should be surrounded by blank lines",
+                                        "line": [
+                                            82,
+                                            91,
+                                            96,
+                                            101,
+                                            104,
+                                            109,
+                                            114
+                                        ]
+                                    },
+                                    "MD034": {
+                                        "description": "Bare URL used",
+                                        "line": [
+                                            18,
+                                            86
+                                        ]
+                                    }
+                                },
+                                "./utils/README.md": {
+                                    "MD002": {
+                                        "description": "First header should be a top level header",
+                                        "line": [
+                                            1
+                                        ]
+                                    },
+                                    "MD013": {
+                                        "description": "Line length",
+                                        "line": [
+                                            6
+                                        ]
+                                    },
+                                    "MD022": {
+                                        "description": "Headers should be surrounded by blank lines",
+                                        "line": [
+                                            5
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 40,
+                "total_subcriteria": 5,
+                "success_subcriteria": 2
+            }
+        },
+        "QC.Lic": {
+            "valid": false,
+            "subcriteria": {},
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 0,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Sec": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Sec02": {
+                    "description": "Is the source code passing Static Analysis Security Testing (SAST)?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the SAST tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Found security weaknesses when performing SAST checks with bandit tool",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-bandit",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "bandit",
+                                "lang": "Python",
+                                "version": "1.7.4",
+                                "docker": {
+                                    "dockerfile": "QC.Sec/bandit/Dockerfile",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sec github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin bandit",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "bandit -f json --quiet  --confidence-level high --severity-level high --recursive  ."
+                                    ],
+                                    "stdout_text": "{\n  \"errors\": [\n    {\n      \"filename\": \"./utils/._consume_event_jsonfile_from_rabbit.py\",\n      \"reason\": \"syntax error while parsing AST from file\"\n    },\n    {\n      \"filename\": \"./utils/._publish_event_jsonfile_on_queue.py\",\n      \"reason\": \"syntax error while parsing AST from file\"\n    }\n  ],\n  \"generated_at\": \"2025-07-23T11:22:07Z\",\n  \"metrics\": {\n    \"./cfg/do_main_ptf_config_file.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 1,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 1,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 225,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/TypeMeasurement_for_misfit.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 53,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/__init__.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/deformation.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 69,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/files_utils.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 9,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/misfit_evaluator.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 449,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_define_ensemble.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 116,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_define_ensemble_global.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 325,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_ellipsoids.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 80,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_ensemble_sampling_SDE.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 269,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_fast_cdf.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 37,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_forecast_points_neam.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 61,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_lambda_bsps_load.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 244,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_lambda_bsps_sep.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 213,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_load_event.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 302,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_matrix.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 218,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_mix_utilities.py\": {\n      \"CONFIDENCE.HIGH\": 5,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 1,\n      \"SEVERITY.LOW\": 1,\n      \"SEVERITY.MEDIUM\": 3,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 596,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_parser.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 65,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_pre_selection.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 175,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_preload.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 195,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_probability_scenarios.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 1,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 246,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_rabbit_consume.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 113,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_save_results.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 220,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_scaling_laws.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 83,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/ptf_short_term.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 309,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/pyptf.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 299,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/pyptf_exceptions.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 2,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/run_steps.py\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 1,\n      \"SEVERITY.LOW\": 1,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 278,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/scenario_player.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 193,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/smooth_data.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 236,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/step1_run.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 132,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/step2_create_ts_input_for_ptf.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 119,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/step2_extract_ts.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 102,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/step2_precomputed.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 149,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/step2_remote_connection.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 1,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 129,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/step2_simulations.py\": {\n      \"CONFIDENCE.HIGH\": 4,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 1,\n      \"SEVERITY.LOW\": 3,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 99,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/step3_run.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 257,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/step4_run.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 64,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/step5_run.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 271,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/t_hysea.py\": {\n      \"CONFIDENCE.HIGH\": 6,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 2,\n      \"SEVERITY.LOW\": 4,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 177,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/test.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 36,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./pyptf/tsunami_simulations.py\": {\n      \"CONFIDENCE.HIGH\": 6,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 2,\n      \"SEVERITY.LOW\": 4,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 258,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./utils/._consume_event_jsonfile_from_rabbit.py\": {\n      \"loc\": 1,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./utils/._publish_event_jsonfile_on_queue.py\": {\n      \"loc\": 1,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./utils/consume_event_jsonfile_from_rabbit.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 113,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./utils/event_parameters_2_geojson.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 115,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./utils/nc-files_2_ptf-json-files_01.py\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 2,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 66,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./utils/publish_event_jsonfile_on_queue.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 84,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./workflow_main.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 34,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 28,\n      \"CONFIDENCE.LOW\": 1,\n      \"CONFIDENCE.MEDIUM\": 1,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 7,\n      \"SEVERITY.LOW\": 17,\n      \"SEVERITY.MEDIUM\": 6,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 7887,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": [\n    {\n      \"code\": \"777 \\n778         resp = requests.get(db_node + \\\"/fdsnws/event/1/query?\\\", params = params_update, verify=False)\\n779 \\n\",\n      \"col_offset\": 15,\n      \"filename\": \"./pyptf/ptf_mix_utilities.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 295,\n        \"link\": \"https://cwe.mitre.org/data/definitions/295.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"Requests call with verify=False disabling SSL certificate checks, security issue.\",\n      \"line_number\": 778,\n      \"line_range\": [\n        778\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b501_request_with_no_cert_validation.html\",\n      \"test_id\": \"B501\",\n      \"test_name\": \"request_with_no_cert_validation\"\n    },\n    {\n      \"code\": \"240                   sim_folder_BS + ' ' + sim_folder_PS + ' ' + sim_folder_SBS + ' &'\\n241             sp.run(cmd, shell=True)\\n242             os.chdir(workflow_dict['wf_path'])\\n\",\n      \"col_offset\": 12,\n      \"filename\": \"./pyptf/run_steps.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"subprocess call with shell=True identified, security issue.\",\n      \"line_number\": 241,\n      \"line_range\": [\n        241\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html\",\n      \"test_id\": \"B602\",\n      \"test_name\": \"subprocess_popen_with_shell_equals_true\"\n    },\n    {\n      \"code\": \"90                   wd['step2_list_simdir_BS'] + ' ' + wd['step2_list_simdir_PS'] + ' ' + wd['step2_list_simdir_SBS'] + '&'\\n91         sp.run(cmd, shell=True)\\n92 \\n\",\n      \"col_offset\": 8,\n      \"filename\": \"./pyptf/step2_simulations.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"subprocess call with shell=True identified, security issue.\",\n      \"line_number\": 91,\n      \"line_range\": [\n        91\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html\",\n      \"test_id\": \"B602\",\n      \"test_name\": \"subprocess_popen_with_shell_equals_true\"\n    },\n    {\n      \"code\": \"207         if hpc_cluster == 'mercalli':\\n208             sp.run('qsub -W block=true ' + runfile + '&',shell=True)\\n209         elif hpc_cluster == 'leonardo':\\n\",\n      \"col_offset\": 12,\n      \"filename\": \"./pyptf/t_hysea.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"subprocess call with shell=True identified, security issue.\",\n      \"line_number\": 208,\n      \"line_range\": [\n        208\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html\",\n      \"test_id\": \"B602\",\n      \"test_name\": \"subprocess_popen_with_shell_equals_true\"\n    },\n    {\n      \"code\": \"209         elif hpc_cluster == 'leonardo':\\n210             sp.run('sbatch -W ' + runfile + '&',shell=True)\\n211 \\n\",\n      \"col_offset\": 12,\n      \"filename\": \"./pyptf/t_hysea.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"subprocess call with shell=True identified, security issue.\",\n      \"line_number\": 210,\n      \"line_range\": [\n        210\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html\",\n      \"test_id\": \"B602\",\n      \"test_name\": \"subprocess_popen_with_shell_equals_true\"\n    },\n    {\n      \"code\": \"330         if hpc_cluster == 'mercalli':\\n331             sp.run('qsub -W block=true ' + runfile + '&',shell=True)\\n332         elif hpc_cluster == 'leonardo':\\n\",\n      \"col_offset\": 12,\n      \"filename\": \"./pyptf/tsunami_simulations.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"subprocess call with shell=True identified, security issue.\",\n      \"line_number\": 331,\n      \"line_range\": [\n        331\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html\",\n      \"test_id\": \"B602\",\n      \"test_name\": \"subprocess_popen_with_shell_equals_true\"\n    },\n    {\n      \"code\": \"332         elif hpc_cluster == 'leonardo':\\n333             sp.run('sbatch -W ' + runfile + '&',shell=True)\\n334 \\n\",\n      \"col_offset\": 12,\n      \"filename\": \"./pyptf/tsunami_simulations.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"subprocess call with shell=True identified, security issue.\",\n      \"line_number\": 333,\n      \"line_range\": [\n        333\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html\",\n      \"test_id\": \"B602\",\n      \"test_name\": \"subprocess_popen_with_shell_equals_true\"\n    }\n  ]\n}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/79/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "errors": [
+                                    {
+                                        "filename": "./utils/._consume_event_jsonfile_from_rabbit.py",
+                                        "reason": "syntax error while parsing AST from file"
+                                    },
+                                    {
+                                        "filename": "./utils/._publish_event_jsonfile_on_queue.py",
+                                        "reason": "syntax error while parsing AST from file"
+                                    }
+                                ],
+                                "generated_at": "2025-07-23T11:22:07Z",
+                                "metrics": {
+                                    "./cfg/do_main_ptf_config_file.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 1,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 1,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 225,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/TypeMeasurement_for_misfit.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 53,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/__init__.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 0,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/deformation.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 69,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/files_utils.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 9,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/misfit_evaluator.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 449,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_define_ensemble.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 116,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_define_ensemble_global.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 325,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_ellipsoids.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 80,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_ensemble_sampling_SDE.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 269,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_fast_cdf.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 37,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_forecast_points_neam.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 61,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_lambda_bsps_load.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 244,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_lambda_bsps_sep.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 213,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_load_event.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 1,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 302,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_matrix.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 218,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_mix_utilities.py": {
+                                        "CONFIDENCE.HIGH": 5,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 1,
+                                        "SEVERITY.LOW": 1,
+                                        "SEVERITY.MEDIUM": 3,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 596,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_parser.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 65,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_pre_selection.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 175,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_preload.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 195,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_probability_scenarios.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 1,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 246,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_rabbit_consume.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 113,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_save_results.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 220,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_scaling_laws.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 83,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/ptf_short_term.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 309,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/pyptf.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 299,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/pyptf_exceptions.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 2,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/run_steps.py": {
+                                        "CONFIDENCE.HIGH": 2,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 1,
+                                        "SEVERITY.LOW": 1,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 278,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/scenario_player.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 193,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/smooth_data.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 236,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/step1_run.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 132,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/step2_create_ts_input_for_ptf.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 119,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/step2_extract_ts.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 102,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/step2_precomputed.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 149,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/step2_remote_connection.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 1,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 1,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 129,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/step2_simulations.py": {
+                                        "CONFIDENCE.HIGH": 4,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 1,
+                                        "SEVERITY.LOW": 3,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 99,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/step3_run.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 257,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/step4_run.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 64,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/step5_run.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 271,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/t_hysea.py": {
+                                        "CONFIDENCE.HIGH": 6,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 2,
+                                        "SEVERITY.LOW": 4,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 177,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/test.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 1,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 36,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./pyptf/tsunami_simulations.py": {
+                                        "CONFIDENCE.HIGH": 6,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 2,
+                                        "SEVERITY.LOW": 4,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 258,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./utils/._consume_event_jsonfile_from_rabbit.py": {
+                                        "loc": 1,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./utils/._publish_event_jsonfile_on_queue.py": {
+                                        "loc": 1,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./utils/consume_event_jsonfile_from_rabbit.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 113,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./utils/event_parameters_2_geojson.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 115,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./utils/nc-files_2_ptf-json-files_01.py": {
+                                        "CONFIDENCE.HIGH": 2,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 2,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 66,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./utils/publish_event_jsonfile_on_queue.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 84,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./workflow_main.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 34,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "_totals": {
+                                        "CONFIDENCE.HIGH": 28,
+                                        "CONFIDENCE.LOW": 1,
+                                        "CONFIDENCE.MEDIUM": 1,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 7,
+                                        "SEVERITY.LOW": 17,
+                                        "SEVERITY.MEDIUM": 6,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 7887,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    }
+                                },
+                                "results": [
+                                    {
+                                        "code": "777 \n778         resp = requests.get(db_node + \"/fdsnws/event/1/query?\", params = params_update, verify=False)\n779 \n",
+                                        "col_offset": 15,
+                                        "filename": "./pyptf/ptf_mix_utilities.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 295,
+                                            "link": "https://cwe.mitre.org/data/definitions/295.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "Requests call with verify=False disabling SSL certificate checks, security issue.",
+                                        "line_number": 778,
+                                        "line_range": [
+                                            778
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b501_request_with_no_cert_validation.html",
+                                        "test_id": "B501",
+                                        "test_name": "request_with_no_cert_validation"
+                                    },
+                                    {
+                                        "code": "240                   sim_folder_BS + ' ' + sim_folder_PS + ' ' + sim_folder_SBS + ' &'\n241             sp.run(cmd, shell=True)\n242             os.chdir(workflow_dict['wf_path'])\n",
+                                        "col_offset": 12,
+                                        "filename": "./pyptf/run_steps.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "subprocess call with shell=True identified, security issue.",
+                                        "line_number": 241,
+                                        "line_range": [
+                                            241
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+                                        "test_id": "B602",
+                                        "test_name": "subprocess_popen_with_shell_equals_true"
+                                    },
+                                    {
+                                        "code": "90                   wd['step2_list_simdir_BS'] + ' ' + wd['step2_list_simdir_PS'] + ' ' + wd['step2_list_simdir_SBS'] + '&'\n91         sp.run(cmd, shell=True)\n92 \n",
+                                        "col_offset": 8,
+                                        "filename": "./pyptf/step2_simulations.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "subprocess call with shell=True identified, security issue.",
+                                        "line_number": 91,
+                                        "line_range": [
+                                            91
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+                                        "test_id": "B602",
+                                        "test_name": "subprocess_popen_with_shell_equals_true"
+                                    },
+                                    {
+                                        "code": "207         if hpc_cluster == 'mercalli':\n208             sp.run('qsub -W block=true ' + runfile + '&',shell=True)\n209         elif hpc_cluster == 'leonardo':\n",
+                                        "col_offset": 12,
+                                        "filename": "./pyptf/t_hysea.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "subprocess call with shell=True identified, security issue.",
+                                        "line_number": 208,
+                                        "line_range": [
+                                            208
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+                                        "test_id": "B602",
+                                        "test_name": "subprocess_popen_with_shell_equals_true"
+                                    },
+                                    {
+                                        "code": "209         elif hpc_cluster == 'leonardo':\n210             sp.run('sbatch -W ' + runfile + '&',shell=True)\n211 \n",
+                                        "col_offset": 12,
+                                        "filename": "./pyptf/t_hysea.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "subprocess call with shell=True identified, security issue.",
+                                        "line_number": 210,
+                                        "line_range": [
+                                            210
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+                                        "test_id": "B602",
+                                        "test_name": "subprocess_popen_with_shell_equals_true"
+                                    },
+                                    {
+                                        "code": "330         if hpc_cluster == 'mercalli':\n331             sp.run('qsub -W block=true ' + runfile + '&',shell=True)\n332         elif hpc_cluster == 'leonardo':\n",
+                                        "col_offset": 12,
+                                        "filename": "./pyptf/tsunami_simulations.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "subprocess call with shell=True identified, security issue.",
+                                        "line_number": 331,
+                                        "line_range": [
+                                            331
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+                                        "test_id": "B602",
+                                        "test_name": "subprocess_popen_with_shell_equals_true"
+                                    },
+                                    {
+                                        "code": "332         elif hpc_cluster == 'leonardo':\n333             sp.run('sbatch -W ' + runfile + '&',shell=True)\n334 \n",
+                                        "col_offset": 12,
+                                        "filename": "./pyptf/tsunami_simulations.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "subprocess call with shell=True identified, security issue.",
+                                        "line_number": 333,
+                                        "line_range": [
+                                            333
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+                                        "test_id": "B602",
+                                        "test_name": "subprocess_popen_with_shell_equals_true"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Sty": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Sty01": {
+                    "description": "Is the software product following a style standard for Python files?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the linter tool",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Python files are compliant with flake8 (pycodestyle, pyflakes, mccabe) standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-flake8",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "flake8",
+                                "lang": "Python",
+                                "version": "4.0.1 (mccabe: 0.6.1, pycodestyle: 2.8.0, pyflakes: 2.4.0)",
+                                "docker": {
+                                    "image": "pipelinecomponents/flake8:0.9.0",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin flake8",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "flake8 ."
+                                    ],
+                                    "stdout_text": "multiprocessing.pool.RemoteTraceback: \n\"\"\"\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.8/multiprocessing/pool.py\", line 125, in worker\n    result = (True, func(*args, **kwds))\n  File \"/usr/local/lib/python3.8/multiprocessing/pool.py\", line 48, in mapstar\n    return list(map(*args))\n  File \"/usr/local/lib/python3.8/site-packages/flake8/checker.py\", line 687, in _run_checks\n    return checker.run_checks()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/checker.py\", line 597, in run_checks\n    self.run_ast_checks()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/checker.py\", line 490, in run_ast_checks\n    ast = self.processor.build_ast()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/processor.py\", line 223, in build_ast\n    return ast.parse(\"\".join(self.lines))\n  File \"/usr/local/lib/python3.8/ast.py\", line 47, in parse\n    return compile(source, filename, mode, flags,\nValueError: source code string cannot contain null bytes\n\"\"\"\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/usr/local/bin/flake8\", line 8, in <module>\n    sys.exit(main())\n  File \"/usr/local/lib/python3.8/site-packages/flake8/main/cli.py\", line 22, in main\n    app.run(argv)\n  File \"/usr/local/lib/python3.8/site-packages/flake8/main/application.py\", line 375, in run\n    self._run(argv)\n  File \"/usr/local/lib/python3.8/site-packages/flake8/main/application.py\", line 364, in _run\n    self.run_checks()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/main/application.py\", line 271, in run_checks\n    self.file_checker_manager.run()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/checker.py\", line 309, in run\n    self.run_parallel()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/checker.py\", line 275, in run_parallel\n    for ret in pool_map:\n  File \"/usr/local/lib/python3.8/multiprocessing/pool.py\", line 448, in <genexpr>\n    return (item for chunk in result for item in chunk)\n  File \"/usr/local/lib/python3.8/multiprocessing/pool.py\", line 868, in next\n    raise value\nValueError: source code string cannot contain null bytes",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/88/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": "multiprocessing.pool.RemoteTraceback: \n\"\"\"\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.8/multiprocessing/pool.py\", line 125, in worker\n    result = (True, func(*args, **kwds))\n  File \"/usr/local/lib/python3.8/multiprocessing/pool.py\", line 48, in mapstar\n    return list(map(*args))\n  File \"/usr/local/lib/python3.8/site-packages/flake8/checker.py\", line 687, in _run_checks\n    return checker.run_checks()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/checker.py\", line 597, in run_checks\n    self.run_ast_checks()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/checker.py\", line 490, in run_ast_checks\n    ast = self.processor.build_ast()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/processor.py\", line 223, in build_ast\n    return ast.parse(\"\".join(self.lines))\n  File \"/usr/local/lib/python3.8/ast.py\", line 47, in parse\n    return compile(source, filename, mode, flags,\nValueError: source code string cannot contain null bytes\n\"\"\"\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/usr/local/bin/flake8\", line 8, in <module>\n    sys.exit(main())\n  File \"/usr/local/lib/python3.8/site-packages/flake8/main/cli.py\", line 22, in main\n    app.run(argv)\n  File \"/usr/local/lib/python3.8/site-packages/flake8/main/application.py\", line 375, in run\n    self._run(argv)\n  File \"/usr/local/lib/python3.8/site-packages/flake8/main/application.py\", line 364, in _run\n    self.run_checks()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/main/application.py\", line 271, in run_checks\n    self.file_checker_manager.run()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/checker.py\", line 309, in run\n    self.run_parallel()\n  File \"/usr/local/lib/python3.8/site-packages/flake8/checker.py\", line 275, in run_parallel\n    for ret in pool_map:\n  File \"/usr/local/lib/python3.8/multiprocessing/pool.py\", line 448, in <genexpr>\n    return (item for chunk in result for item in chunk)\n  File \"/usr/local/lib/python3.8/multiprocessing/pool.py\", line 868, in next\n    raise value\nValueError: source code string cannot contain null bytes"
+                        },
+                        {
+                            "valid": false,
+                            "message": "JSON files are not fully compliant with jsonlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "jsonlint",
+                                "lang": "JSON",
+                                "version": "1.6.3",
+                                "docker": {
+                                    "dockerfile": "QC.Sty/jsonlint/Dockerfile",
+                                    "reviewed": "2021-11-23"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin jsonlint",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "jsonlint-cli \"**/*.json\""
+                                    ],
+                                    "stdout_text": "/sqaaas-build/github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin/utils/test_event.json parse:\nParse error on line 1:\n{'type': 'FeatureColl\n-^\nExpecting 'STRING', '}', got 'undefined'",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/97/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Uni": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Uni01": {
+                    "description": "Are the tests passing through an automated means?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the failing test cases found by the {tool_name} tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Test cases are not passing using None testing framework",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "pytest",
+                                "lang": "Python",
+                                "version": "7.1.3",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-pytest:7.1.3-alpha",
+                                    "reviewed": "2023-08-09"
+                                },
+                                "ci": {
+                                    "name": "QC.Uni github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin pytest",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "pytest  --json-report  --json-report-indent 4"
+                                    ],
+                                    "stdout_text": "============================= test session starts ==============================\nplatform linux -- Python 3.9.17, pytest-7.1.3, pluggy-1.2.0\nrootdir: /sqaaas-build/github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin\nplugins: metadata-3.0.0, json-report-1.5.0\ncollected 0 items\n\n--------------------------------- JSON report ----------------------------------\nreport saved to: .report.json\n============================ no tests ran in 0.03s =============================",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/106/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Ver": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Ver01.0": {
+                    "description": "Are tags being used for releasing software",
+                    "requirement_level": "MUST",
+                    "hint": "Git tags are a convenient way to release software. This subcriterion checks if any git tag is present in the code history. More info on it-scm.com/book/en/v2/Git-Basics-Tagging\" target=\"_blank\">git tagging</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "The code repository does not use tags for releasing new software versions",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "[]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": []
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                },
+                "QC.Ver01": {
+                    "description": "Is the latest release compliant with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Latest tag must be compliant with <a href=\"https://semver.org\" target=\"_blank\">SemVer specification</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Latest release tag None found, but is not SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "[]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": []
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                },
+                "QC.Ver02": {
+                    "description": "Are all release tags with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Existent release tags shall be <a href=\"https://semver.org\" target=\"_blank\">SemVer</a> compliant for this subcriterion to be successful",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "All release tags are SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "[]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/tsunami-digital-twin.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/tsunami-digital-twin.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": []
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 33,
+                "total_subcriteria": 3,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Met": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Met01": {
+                    "description": "Is the software citable?",
+                    "valid": false,
+                    "hint": "The two formats for software citation supported by SQAaaS are: 1) <a href=\"https://codemeta.github.io/\" target=\"_blank\">CodeMeta</a> and 2) <a href=\"https://citation-file-format.github.io/\" target=\"_blank\">Citation File Format (CFF)</a>. While CodeMeta provides you with a more comprehensive description, CFF is a more lightweight, good-enough approach to software (with built-in support by GitHub) citation. Both provide tools (<a href=\"https://codemeta.github.io/codemeta-generator/\" target=\"_blank\">CodeMeta generator</a>, <a href=\"https://citation-file-format.github.io/cff-initializer-javascript/#/\" target=\"_blank\">CFFINIT</a>)to easily generate a working citation file. Once having the file, be sure to add it to the root path of your code repo.",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "No matching files found for language <CodeMeta> in repository searching by extensions or filenames\nNo matching files found for language <Citation File Format> in repository searching by extensions or filenames"
+                        }
+                    ],
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        }
+    },
+    "badge": {
+        "software": {
+            "criteria": {
+                "bronze": {
+                    "to_fulfill": [
+                        "QC.Lic",
+                        "QC.Acc",
+                        "QC.Doc"
+                    ],
+                    "missing": [
+                        "QC.Lic",
+                        "QC.Doc"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc"
+                    ]
+                },
+                "silver": {
+                    "to_fulfill": [
+                        "QC.Acc",
+                        "QC.Doc",
+                        "QC.Met",
+                        "QC.Lic",
+                        "QC.Ver"
+                    ],
+                    "missing": [
+                        "QC.Lic",
+                        "QC.Doc",
+                        "QC.Ver",
+                        "QC.Met"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc"
+                    ]
+                },
+                "gold": {
+                    "to_fulfill": [
+                        "QC.Acc",
+                        "QC.Doc",
+                        "QC.Met",
+                        "QC.Sec",
+                        "QC.Lic",
+                        "QC.Sty",
+                        "QC.Uni",
+                        "QC.Ver"
+                    ],
+                    "missing": [
+                        "QC.Doc",
+                        "QC.Met",
+                        "QC.Sec",
+                        "QC.Lic",
+                        "QC.Sty",
+                        "QC.Uni",
+                        "QC.Ver"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc"
+                    ]
+                }
+            },
+            "data": {}
+        }
+    }
+}
