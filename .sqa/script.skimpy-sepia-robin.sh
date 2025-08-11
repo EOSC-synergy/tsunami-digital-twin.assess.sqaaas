@@ -4,6 +4,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 (
-cd github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin &&
-    flake8 .
+cd github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin/DTC61/WF6102/ST610206/src &&
+    echo 'Here we will execute COMPSs'
 )

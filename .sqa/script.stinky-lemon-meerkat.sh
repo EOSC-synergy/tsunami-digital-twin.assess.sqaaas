@@ -4,6 +4,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 (
-cd github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin &&
-    jsonlint-cli "**/*.json"
+cd github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin/DTC61/WF6102/ST610206/src &&
+    git rev-parse --is-inside-work-tree 
 )

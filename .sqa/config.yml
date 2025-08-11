@@ -7,6 +7,7 @@ config:
     github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin:
       branch: miniST610106
       repo: https://github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin
+      subfolder: DTC61/WF6102/ST610206/src
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
@@ -15,50 +16,50 @@ sqa_criteria:
     repos:
       github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin git:
         commands:
-        - /usr/bin/env sh .sqa/script.flimsy-ruby-cassowary.sh
-        container: qc.acc_lousy-plum-chipmunk
+        - /usr/bin/env sh .sqa/script.stinky-lemon-meerkat.sh
+        container: qc.acc_cozy-corn-burmese
   QC.Doc:
     repos:
       github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.thirsty-lilac-corgi.sh
-        container: qc.doc_wimpy-violet-saola
+        - /usr/bin/env sh .sqa/script.sunny-russet-otter.sh
+        container: qc.doc_snappy-cream-tortoise
       github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin git:
         commands:
-        - /usr/bin/env sh .sqa/script.messy-chestnut-corgi.sh
-        container: qc.doc_lanky-taupe-javanese
+        - /usr/bin/env sh .sqa/script.homey-corn-boar.sh
+        container: qc.doc_gamy-rust-gecko
   QC.Lic:
     repos:
       github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.pokey-sangria-heron.sh
-        container: qc.lic_craggy-red-peccary
+        - /usr/bin/env sh .sqa/script.skimpy-ecru-guppy.sh
+        container: qc.lic_wimpy-corn-reindeer
   QC.Sec:
     repos:
       github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.skinny-asparagus-macaque.sh
-        container: qc.sec_shaggy-sepia-capuchin
+        - /usr/bin/env sh .sqa/script.clammy-cerise-quokka.sh
+        container: qc.sec_smelly-black-dingo
   QC.Sty:
     repos:
       github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.snappy-vermilion-vole.sh
-        container: qc.sty_fuzzy-asparagus-binturong
+        - /usr/bin/env sh .sqa/script.thirsty-buff-mule.sh
+        container: qc.sty_whiny-xanthic-beetle
       github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.trippy-cream-wolf.sh
-        container: qc.sty_stealthy-dandelion-frise
+        - /usr/bin/env sh .sqa/script.scummy-rust-neanderthal.sh
+        container: qc.sty_cloudy-alizarin-dormouse
   QC.Uni:
     repos:
-      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin pytest:
+      github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin commands:
         commands:
-        - /usr/bin/env sh .sqa/script.boozy-burgundy-audemer.sh
-        container: qc.uni_lanky-lilac-wombat
+        - /usr/bin/env sh .sqa/script.skimpy-sepia-robin.sh
+        container: qc.uni_lumpy-asparagus-bongo
   QC.Ver:
     repos:
       github.com/dtgeoeu-wp6-tsunamis/tsunami-digital-twin get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.flimsy-teal-sheepdog.sh
-        container: qc.ver_lovely-amaranth-bison
+        - /usr/bin/env sh .sqa/script.baggy-scarlet-barb.sh
+        container: qc.ver_hazy-chartreuse-chinchilla
 timeout: 5400
